@@ -5,7 +5,7 @@ const API_URL = 'http://localhost/toonscsv/';
 // const API_URL = 'http://toons-csv.serverpi.ddns.me/';
 
 export default {
-
+//out of time for response message handling
   getDocumentsList: async(success,failure)=>{
     try {
       const response = await api().get(API_URL +'csv/index');
@@ -32,7 +32,8 @@ export default {
   },
   editDocument: async(body,success,failure)=>{
     try {
-      const response = await api().post(API_URL +'csv/edit',body);
+      console.log(body);
+      const response = await apiFormData().post(API_URL +'csv/edit',body);
       success(response.data);
     } catch (error) {
       failure(error);
@@ -48,10 +49,11 @@ function api() {
       }
     });
 }
-function apiFile() {
+function apiFormData() {
   return axios.create({
     headers: {
       'Content-Type': 'multipart/form-data'
+      // 'Content-Type': 'application/x-www-form-urlencoded'
     }
   });
 }
