@@ -1,10 +1,9 @@
 <template>
   <div id="app">
     <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div> -->
-    <h2 class="text-muted m-3">Csv file storage and editing</h2>
+      <router-link to="/"><h2 class="text-muted m-3">Csv file storage and editing</h2></router-link>
     <router-view class="overflow-auto"/>
   </div>
 </template>

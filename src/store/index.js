@@ -16,8 +16,29 @@ export default new Vuex.Store({
     mutateDocumentData(state,data){
       state.documentData = data;
     },
+    mutateDocumentDataField(state,yxValue){
+      state.documentData[yxValue.y][yxValue.x] = yxValue.value;
+    },
+    deleteDocumentDataRow(state,y){
+       state.documentData.splice(y,1);
+    },
+    addDocumentDataRow(state){
+      const firstRowObj =  state.documentData[0];
+      const colCount = Object.keys(firstRowObj).length
+      let newArr = Array(colCount).fill('');
+      state.documentData.push(newArr);
+    }
   },
   actions: {
+    mutateDocumentDataField({commit},yxValue){
+      commit('mutateDocumentDataField',yxValue);
+    },
+    deleteDocumentDataRow({commit},y){
+      commit('deleteDocumentDataRow',y);
+    },
+    addDocumentDataRow({commit}){
+      commit('addDocumentDataRow');
+    },
     async getDocumentList({commit}){
       await api.getDocumentsList((data)=>{
         commit('mutateDocumentList',data);
@@ -42,7 +63,7 @@ export default new Vuex.Store({
       await api.postDocument(
         fileForm,
         (data)=>{
-          console.log(data)
+          console.log(data.data)
         },
         (err)=>{
           console.log(err)

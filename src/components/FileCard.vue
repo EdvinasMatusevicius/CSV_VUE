@@ -3,7 +3,7 @@
         <img class="card-img-top w-75" src="@/assets/csv-logo.svg" alt="csv file icon">
         <div class="card-body">
           <h5 class="card-title">{{documentName}}</h5>
-        <router-link class="btn btn-primary" :to="'/csv/show/?name='+documentName">About</router-link>
+        <router-link class="btn btn-primary" :to="'/csv/show/?name='+documentName">edit</router-link>
         </div>
     </div>
 </template>

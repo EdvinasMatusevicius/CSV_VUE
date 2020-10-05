@@ -12,7 +12,7 @@
           <label class="form-check-label" for="delimiter1">,</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="delimiter" id="delimiter2" value="option2">
+          <input class="form-check-input" type="radio" name="delimiter" id="delimiter2" value="semicolon">
           <label class="form-check-label" for="delimiter2">;</label>
         </div>
         <div class="form-check form-check-inline">

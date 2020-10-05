@@ -17,7 +17,6 @@ export default {
   getDocumentData: async(documentName,success,failure)=>{
     try {
       const response = await api().get(API_URL +'csv/show/?name='+documentName);
-      console.log(response);
       success(response.data);
     } catch (error) {
       failure(error);
