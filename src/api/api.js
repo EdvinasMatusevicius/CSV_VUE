@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 
-const API_URL = 'http://localhost/toonscsv/';
-// const API_URL = 'http://toons-csv.serverpi.ddns.me/';
+// const API_URL = 'http://localhost/toonscsv/';
+const API_URL = 'http://toons-csv.serverpi.ddns.me/';
 
 export default {
 //out of time for response message handling
